@@ -3,6 +3,7 @@
 Jsonnet library to parse and validate Semantic Versioning.
 
 Implemented according spec Semantic Versioning 2.0.0
+
 Using BNF: https://semver.org/#backusnaur-form-grammar-for-valid-semver-versions
 
 ## Install
