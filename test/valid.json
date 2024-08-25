@@ -1,0 +1,281 @@
+[
+   {
+      "parsed": {
+         "major": "0",
+         "minor": "0",
+         "patch": "4"
+      },
+      "value": "0.0.4"
+   },
+   {
+      "parsed": {
+         "major": "1",
+         "minor": "2",
+         "patch": "3"
+      },
+      "value": "1.2.3"
+   },
+   {
+      "parsed": {
+         "major": "10",
+         "minor": "20",
+         "patch": "30"
+      },
+      "value": "10.20.30"
+   },
+   {
+      "parsed": {
+         "build": "meta",
+         "major": "1",
+         "minor": "1",
+         "patch": "2",
+         "pre-release": "prerelease"
+      },
+      "value": "1.1.2-prerelease+meta"
+   },
+   {
+      "parsed": {
+         "build": "meta",
+         "major": "1",
+         "minor": "1",
+         "patch": "2"
+      },
+      "value": "1.1.2+meta"
+   },
+   {
+      "parsed": {
+         "build": "meta-valid",
+         "major": "1",
+         "minor": "1",
+         "patch": "2"
+      },
+      "value": "1.1.2+meta-valid"
+   },
+   {
+      "parsed": {
+         "major": "1",
+         "minor": "0",
+         "patch": "0",
+         "pre-release": "alpha"
+      },
+      "value": "1.0.0-alpha"
+   },
+   {
+      "parsed": {
+         "major": "1",
+         "minor": "0",
+         "patch": "0",
+         "pre-release": "beta"
+      },
+      "value": "1.0.0-beta"
+   },
+   {
+      "parsed": {
+         "major": "1",
+         "minor": "0",
+         "patch": "0",
+         "pre-release": "alpha.beta"
+      },
+      "value": "1.0.0-alpha.beta"
+   },
+   {
+      "parsed": {
+         "major": "1",
+         "minor": "0",
+         "patch": "0",
+         "pre-release": "alpha.beta.1"
+      },
+      "value": "1.0.0-alpha.beta.1"
+   },
+   {
+      "parsed": {
+         "major": "1",
+         "minor": "0",
+         "patch": "0",
+         "pre-release": "alpha.1"
+      },
+      "value": "1.0.0-alpha.1"
+   },
+   {
+      "parsed": {
+         "major": "1",
+         "minor": "0",
+         "patch": "0",
+         "pre-release": "alpha0.valid"
+      },
+      "value": "1.0.0-alpha0.valid"
+   },
+   {
+      "parsed": {
+         "major": "1",
+         "minor": "0",
+         "patch": "0",
+         "pre-release": "alpha.0valid"
+      },
+      "value": "1.0.0-alpha.0valid"
+   },
+   {
+      "parsed": {
+         "build": "build.1-aef.1-its-okay",
+         "major": "1",
+         "minor": "0",
+         "patch": "0",
+         "pre-release": "alpha-a.b-c-somethinglong"
+      },
+      "value": "1.0.0-alpha-a.b-c-somethinglong+build.1-aef.1-its-okay"
+   },
+   {
+      "parsed": {
+         "build": "build.1",
+         "major": "1",
+         "minor": "0",
+         "patch": "0",
+         "pre-release": "rc.1"
+      },
+      "value": "1.0.0-rc.1+build.1"
+   },
+   {
+      "parsed": {
+         "build": "build.123",
+         "major": "2",
+         "minor": "0",
+         "patch": "0",
+         "pre-release": "rc.1"
+      },
+      "value": "2.0.0-rc.1+build.123"
+   },
+   {
+      "parsed": {
+         "major": "1",
+         "minor": "2",
+         "patch": "3",
+         "pre-release": "beta"
+      },
+      "value": "1.2.3-beta"
+   },
+   {
+      "parsed": {
+         "major": "10",
+         "minor": "2",
+         "patch": "3",
+         "pre-release": "DEV-SNAPSHOT"
+      },
+      "value": "10.2.3-DEV-SNAPSHOT"
+   },
+   {
+      "parsed": {
+         "major": "1",
+         "minor": "2",
+         "patch": "3",
+         "pre-release": "SNAPSHOT-123"
+      },
+      "value": "1.2.3-SNAPSHOT-123"
+   },
+   {
+      "parsed": {
+         "major": "1",
+         "minor": "0",
+         "patch": "0"
+      },
+      "value": "1.0.0"
+   },
+   {
+      "parsed": {
+         "major": "2",
+         "minor": "0",
+         "patch": "0"
+      },
+      "value": "2.0.0"
+   },
+   {
+      "parsed": {
+         "major": "1",
+         "minor": "1",
+         "patch": "7"
+      },
+      "value": "1.1.7"
+   },
+   {
+      "parsed": {
+         "build": "build.1848",
+         "major": "2",
+         "minor": "0",
+         "patch": "0"
+      },
+      "value": "2.0.0+build.1848"
+   },
+   {
+      "parsed": {
+         "major": "2",
+         "minor": "0",
+         "patch": "1",
+         "pre-release": "alpha.1227"
+      },
+      "value": "2.0.1-alpha.1227"
+   },
+   {
+      "parsed": {
+         "build": "beta",
+         "major": "1",
+         "minor": "0",
+         "patch": "0",
+         "pre-release": "alpha"
+      },
+      "value": "1.0.0-alpha+beta"
+   },
+   {
+      "parsed": {
+         "build": "788",
+         "major": "1",
+         "minor": "2",
+         "patch": "3",
+         "pre-release": "---RC-SNAPSHOT.12.9.1--.12"
+      },
+      "value": "1.2.3----RC-SNAPSHOT.12.9.1--.12+788"
+   },
+   {
+      "parsed": {
+         "build": "meta",
+         "major": "1",
+         "minor": "2",
+         "patch": "3",
+         "pre-release": "---R-S.12.9.1--.12"
+      },
+      "value": "1.2.3----R-S.12.9.1--.12+meta"
+   },
+   {
+      "parsed": {
+         "major": "1",
+         "minor": "2",
+         "patch": "3",
+         "pre-release": "---RC-SNAPSHOT.12.9.1--.12"
+      },
+      "value": "1.2.3----RC-SNAPSHOT.12.9.1--.12"
+   },
+   {
+      "parsed": {
+         "build": "0.build.1-rc.10000aaa-kk-0.1",
+         "major": "1",
+         "minor": "0",
+         "patch": "0"
+      },
+      "value": "1.0.0+0.build.1-rc.10000aaa-kk-0.1"
+   },
+   {
+      "parsed": {
+         "major": "99999999999999999999999",
+         "minor": "999999999999999999",
+         "patch": "99999999999999999"
+      },
+      "value": "99999999999999999999999.999999999999999999.99999999999999999"
+   },
+   {
+      "parsed": {
+         "major": "1",
+         "minor": "0",
+         "patch": "0",
+         "pre-release": "0A.is.legal"
+      },
+      "value": "1.0.0-0A.is.legal"
+   }
+]
