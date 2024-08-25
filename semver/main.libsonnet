@@ -15,7 +15,34 @@ local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
       |||,
       'main.libsonnet',
       'main'
-    ),
+    )
+    + {
+      usageTemplate:
+        |||
+          ## Usage
+
+          Example:
+
+          ```
+          %(jsonnet)s
+          ```
+
+          Output:
+
+          ```json
+          %(output)s
+          ```
+        ||| % {
+          jsonnet:
+            std.strReplace(
+              importstr '../example.libsonnet',
+              './main.libsonnet',
+              '%(url)s/%(filename)s',
+            ),
+          output:
+            std.manifestJson(import './example.libsonnet'),
+        },
+    },
 
   '#parse': d.func.new(
     "`parse` will parse and validate a Semantic Version from a string and returning an object. It'll throw and assertion if the string is not valid.",
@@ -23,7 +50,7 @@ local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
   ),
   parse(str)::
     local parsed = self._parse(str);
-    assert validator.isMajor(str)(parsed.major) : 'MAJOR is not a numeric identifier: "%s"' % parsed.major;
+    assert validator.isMajor(parsed.major) : 'MAJOR is not a numeric identifier: "%s"' % parsed.major;
     assert validator.isMinor(parsed.minor) : 'MINOR is not a numeric identifier: "%s"' % parsed.minor;
     assert validator.isPatch(parsed.patch) : 'PATCH is not a numeric identifier: "%s"' % parsed.patch;
     assert !std.objectHas(parsed, 'pre-release') || validator.isPreRelease(parsed['pre-release']) : 'PRE-RELEASE is not valid: "%s"' % parsed['pre-release'];
