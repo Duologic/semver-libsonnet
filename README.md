@@ -15,7 +15,7 @@ jb install github.com/Duologic/semver-libsonnet/semver@main
 
 Example:
 
-```
+```jsonnet
 local semver = import 'github.com/Duologic/semver-libsonnet/semver/main.libsonnet';
 
 semver.parse('2.0.0-rc.1+build.123')
