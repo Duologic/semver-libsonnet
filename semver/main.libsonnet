@@ -46,10 +46,10 @@ local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
 
   '#parse': d.func.new(
     "`parse` will parse and validate a Semantic Version from a string and returning an object. It'll throw and assertion if the string is not valid.",
-    [d.argument.new('str', d.T.string)],
+    [d.argument.new('semver', d.T.string)],
   ),
-  parse(str)::
-    local parsed = self._parse(str);
+  parse(semver)::
+    local parsed = self._parse(semver);
     assert validator.isMajor(parsed.major) : 'MAJOR is not a numeric identifier: "%s"' % parsed.major;
     assert validator.isMinor(parsed.minor) : 'MINOR is not a numeric identifier: "%s"' % parsed.minor;
     assert validator.isPatch(parsed.patch) : 'PATCH is not a numeric identifier: "%s"' % parsed.patch;
@@ -59,10 +59,10 @@ local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
 
   '#validate': d.func.new(
     '`validate` will parse and validate a Semantic Version from a string and return a boolean.',
-    [d.argument.new('str', d.T.string)],
+    [d.argument.new('semver', d.T.string)],
   ),
-  validate(str)::
-    local parsed = self._parse(str);
+  validate(semver)::
+    local parsed = self._parse(semver);
     std.all([
       validator.isNumericIdentifier(parsed.major),
       validator.isNumericIdentifier(parsed.minor),

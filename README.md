@@ -37,30 +37,30 @@ Output:
 
 ## Index
 
-* [`fn parse(str)`](#fn-parse)
-* [`fn validate(str)`](#fn-validate)
+* [`fn parse(semver)`](#fn-parse)
+* [`fn validate(semver)`](#fn-validate)
 
 ## Fields
 
 ### fn parse
 
 ```jsonnet
-parse(str)
+parse(semver)
 ```
 
 PARAMETERS:
 
-* **str** (`string`)
+* **semver** (`string`)
 
 `parse` will parse and validate a Semantic Version from a string and returning an object. It'll throw and assertion if the string is not valid.
 ### fn validate
 
 ```jsonnet
-validate(str)
+validate(semver)
 ```
 
 PARAMETERS:
 
-* **str** (`string`)
+* **semver** (`string`)
 
 `validate` will parse and validate a Semantic Version from a string and return a boolean.
