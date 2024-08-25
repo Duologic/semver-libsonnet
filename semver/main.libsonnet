@@ -45,7 +45,7 @@ local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
     },
 
   '#parse': d.func.new(
-    "`parse` will parse and validate a Semantic Version from a string and returning an object. It'll throw and assertion if the string is not valid.",
+    "`parse` will parse and validate a Semantic Version from a string and returning an object. It'll throw an assertion if the string is not valid.",
     [d.argument.new('semver', d.T.string)],
   ),
   parse(semver)::

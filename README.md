@@ -52,7 +52,7 @@ PARAMETERS:
 
 * **semver** (`string`)
 
-`parse` will parse and validate a Semantic Version from a string and returning an object. It'll throw and assertion if the string is not valid.
+`parse` will parse and validate a Semantic Version from a string and returning an object. It'll throw an assertion if the string is not valid.
 ### fn validate
 
 ```jsonnet
