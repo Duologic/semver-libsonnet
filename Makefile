@@ -1,7 +1,12 @@
 JSONNET_BIN ?= jsonnet
 
+.DEFAULT: all
+.PHONY: all
+all: docs test fmt
+
 .PHONY: test
 test:
+	@cd test && jb install
 	@$(JSONNET_BIN) \
 		-J semver/vendor \
 		-J test/vendor \
@@ -18,13 +23,9 @@ fmt:
 
 .PHONY: docs
 docs:
+	@cd semver && jb install
 	@$(JSONNET_BIN) \
 		-J semver/vendor \
 		-J semver/lib \
 		-S -m . \
 		-e '(import "github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet").render(import "semver/main.libsonnet")'
-
-
-DEFAULT: all
-.PHONY: all
-all: test fmt docs
