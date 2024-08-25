@@ -12,8 +12,7 @@
     self.isDotSeperatedPreReleaseIdentifier(str),
 
   isDotSeperatedPreReleaseIdentifier(str):
-    self.isPreReleaseIdentifier(str)
-    || std.all(std.map(
+    std.all(std.map(
       self.isPreReleaseIdentifier,
       std.split(str, '.')
     )),
@@ -22,8 +21,7 @@
     self.isDotSeperatedBuildIdentifier(str),
 
   isDotSeperatedBuildIdentifier(str):
-    self.isBuildIdentifier(str)
-    || std.all(std.map(
+    std.all(std.map(
       self.isBuildIdentifier,
       std.split(str, '.')
     )),
@@ -37,8 +35,7 @@
     || self.isDigits(str),
 
   isAlphanumericIdentifier(str):
-    std.length(str) > 0
-    && self.isIdentifierCharacters(str)
+    self.isIdentifierCharacters(str)
     && std.any(std.map(
       self.isNonDigit,
       std.stringChars(str)
@@ -78,11 +75,10 @@
     self.isZero(c)
     || self.isPositiveDigit(c),
 
-  local cp(c) = std.codepoint(c),
-
   isZero(c):
-    std.length(c) == 1
-    && cp(c) == 48,  // 0
+    c == '0',
+
+  local cp(c) = std.codepoint(c),
 
   isPositiveDigit(c):
     std.length(c) == 1
