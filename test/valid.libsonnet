@@ -1,4 +1,4 @@
-local parser = import '../semver/main.libsonnet';
+local semver = import '../semver/main.libsonnet';
 
 // WARN: This file is used to generate valid.json, do not use this as source of truth for test cases themselves.
 
@@ -39,7 +39,7 @@ local valid = [
 std.map(
   function(v) {
     value: v,
-    parsed: parser._parse(v),
+    parsed: semver._parse(v),
   },
   valid,
 )
