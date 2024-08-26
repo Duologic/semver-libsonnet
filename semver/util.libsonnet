@@ -29,6 +29,12 @@ local validate = import './validator.libsonnet';
     ),
 
   sortPreReleaseTags(input):
+    // Precedence:
+    // 1. Identifiers consisting of only digits are compared numerically.
+    // 2. Identifiers with letters or hyphens are compared lexically in ASCII sort order.
+    // 3. Numeric identifiers always have lower precedence than non-numeric identifiers.
+    // 4. A larger set of pre-release fields has a higher precedence than a smaller set, if all of the preceding identifiers are equal.
+
     local splitinput =
       std.map(
         function(str)
@@ -36,6 +42,7 @@ local validate = import './validator.libsonnet';
         input
       );
 
+    // this'll build a verbose tree with all possible tags
     local buildtree =
       std.foldl(
         function(acc, tag)
@@ -49,28 +56,34 @@ local validate = import './validator.libsonnet';
         {},
       );
 
+    // compare numeric and non-numeric seperately
+    // then merge, higher index == higher precedence
     local sortKeys(keys) =
       local digits = std.filter(validate.isDigits, keys);
       local words = std.filter(function(x) !validate.isDigits(x), keys);
       std.sort(digits, std.parseInt)
       + std.sort(words);
 
+    // recursively apply sortKeys to the keys of the tree, then return keys as an array
     local sortTree(tree) =
       std.foldl(
         function(acc, key)
           acc
           + [key]
-          + [
-            key + '.' + k
-            for k in sortTree(tree[key])
-          ],
+          // larger set after key, higher index == higher precedence
+          + std.map(
+            function(k)
+              key + '.' + k,
+            sortTree(tree[key])
+          ),
         sortKeys(std.objectFields(tree)),
         [],
       );
 
+    // this'll be a verbose sorted array of all possible release tag sets
     local sorted = sortTree(buildtree);
 
-    // only return tags that were in the input
+    // only return tags that were part of the input
     std.filter(
       function(x)
         std.member(input, x),
