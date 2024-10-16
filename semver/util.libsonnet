@@ -20,9 +20,9 @@ local validate = import './validator.libsonnet';
             if 'pre-release' in x
             then std.find(x['pre-release'], preReleaseTags)[0]
             else std.length(preReleaseTags),
-          function(x) x.patch,
-          function(x) x.minor,
-          function(x) x.major,
+          function(x) std.parseInt(x.patch),
+          function(x) std.parseInt(x.minor),
+          function(x) std.parseInt(x.major),
         ],
         arr,
       )
